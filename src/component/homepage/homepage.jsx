@@ -18,7 +18,7 @@ const Homepage = () => {
     return (
         <div className="col-md-10 mx-auto konten-hero animate__lightSpeedInLeft">
             {
-                searchListJob ? <Navigate to='/list' /> : searchListJobLoading ? <Loading /> : ''
+                searchListJob ? <Navigate to='/list' /> : searchListJobLoading ? <Loading /> : searchListJobError ? <Navigate to='/list' />  : ''
             }
             <div className="row ">
 
