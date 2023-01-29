@@ -12,7 +12,6 @@ const FormRegis = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('email', email, password)
         dispatch(userRegis({ email: email, password: password }))
     }
     console.log(getRegis)
@@ -42,11 +41,10 @@ const FormRegis = () => {
                         setPass(e.target.value)
                     })} value={password} className="form-control" id="exampleInputPassword1" placeholder='password' />
                 </div>
-                {getRegis ? <div class="alert alert-success" role="alert">
+                {getRegis ? <div className="alert alert-success" role="alert">
                     Selamat akun anda telah berhasil dibuat
-                </div> : getRegisLoading ? <Loading/> : getRegisError ? <div class="alert alert-danger" role="alert">
+                </div> : getRegisLoading ? <Loading/> : getRegisError ? <div className="alert alert-danger" role="alert">
                     Silahkan Cek kembali Email/Password anda</div> : ''}
-
                 <div className="submit d-flex align-items-center">
                     <a onClick={handleSubmit} className="btn btn-yellow me-3">Regis</a>
                     or

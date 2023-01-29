@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailJobList } from '../../redux/action/jobAction';
-import {useParams} from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 import parse from 'html-react-parser'
 
 const DetailComponent = (props) => {
@@ -19,11 +19,11 @@ const DetailComponent = (props) => {
     const newDesc = `${desc}`
     return (
         <div>
-            <div className="col-10 mx-auto">
+            <div className="col-10 mx-auto my-5">
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="#">Home</a></li>
-                        <li className="breadcrumb-item"><a href="#">Jobs List</a></li>
+                        <li className="breadcrumb-item"><NavLink to='/'>Home</NavLink></li>
+                        <li className="breadcrumb-item"><NavLink to='/list'>Jobs List</NavLink></li>
                         <li className="breadcrumb-item active" aria-current="page">Data</li>
                     </ol>
                 </nav>

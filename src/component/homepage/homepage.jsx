@@ -15,7 +15,7 @@ const Homepage = () => {
 
     return (
         <div className="col-md-10 mx-auto konten-hero animate__lightSpeedInLeft">
-            <div className="row ">
+            <div className="row mx-auto">
                 <div className=' p-4 col-md-6  d-flex  flex-column justify-content-center '>
                     <motion.div
                         initial={{x: -1000}}
@@ -36,8 +36,8 @@ const Homepage = () => {
                     </motion.div>
 
                 </div>
-                <div className="col-md-6 col-sm-12 d-flex justify-content-end">
-                    <div className="col-10 img-wrap">
+                <div className="col-md-6 d-flex justify-content-end">
+                    <div className="col-10 mx-auto img-wrap">
                         <img src={hero} alt="hero" className="img-fluid" />
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const Index = (props) => {
             </>
         );
     }
-    const itemsPerPage = 4
+    const itemsPerPage = 6
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
     const currentItems = items.slice(itemOffset, endOffset);

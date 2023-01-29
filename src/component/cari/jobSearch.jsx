@@ -7,6 +7,7 @@ const JobSearch = () => {
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
     const [type, setType] = useState('FULL TIME');
+
     const handleSubmit = ()=>{
         dispatch(searchJobList({description:description,location:location,type:type}))
         console.log(location,description,type)
@@ -29,7 +30,7 @@ const JobSearch = () => {
                         })}
                          className="form-control" type="text" value={location} aria-label="readonly input example" placeholder='Cari Lowongan' />
                     </div>
-                    <div className="col-md-2 col-sm-6">
+                    <div className="col-md-2 col-sm-6 menu-type">
                         <select value={type}  onChange={((e)=>{
                             setType(e.target.value) 
                         })} className="form-select" aria-label="Default select example">
@@ -37,7 +38,7 @@ const JobSearch = () => {
                             <option value="PART TIME">Part Time</option>
                         </select>
                     </div>
-                    <div className="col-md-2 col-sm-6">
+                    <div className="col-md-2 col-sm-6 btn-cari">
                         <button onClick={handleSubmit} className='btn btn-dark col-12'>Cari</button>
                     </div>
                 </div>

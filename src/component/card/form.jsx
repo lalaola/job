@@ -8,7 +8,6 @@ const Form = () => {
    
     const dispatch = useDispatch()
     const {getLoginError} = useSelector((state) => state.JobReducer)
-    console.log('sebelumn',getLoginError)
     
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -35,7 +34,7 @@ const Form = () => {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                 </div>
-                {getLoginError ?  <div class="alert alert-danger" role="alert">
+                {getLoginError ?  <div className="alert alert-danger" role="alert">
                     Silahkan Cek kembali Email/Password anda</div> : ''}
                 <div className="submit d-flex align-items-center">
                 <button onClick={handleSubmit}className="btn btn-yellow me-3">Login</button>

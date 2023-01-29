@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Detail from '../component/detail/detail';
 import Index from '../pages';
+import Detail from '../pages/detail';
 import Job from '../pages/job';
 import Login from '../pages/login';
 

@@ -16,7 +16,6 @@ const Login = () => {
         login ? setLogin(false) : setLogin(true)
     }
     const { getLogin, getLoginLoading } = useSelector((state) => state.JobReducer)
-    console.log(getLogin)
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -27,18 +26,15 @@ const Login = () => {
                 {getLogin ? <Navigate to='/list' /> : getLoginLoading ? <Loading /> : ''}
                 <div className="login  col-8 d-flex ">
                     <div className="col-md-6 d-flex align-items-center">
-                        {/* <p className='p-1 header'>Get Job</p> */}
                         <div className="col-10 mx-auto d-flex flex-column">
                             {login ? <LoginKontent /> : <Regis />}
-                            {login ? <Form /> : <FormRegis />}
-
                             <div className="d-flex align-items-center mx-auto mt-3">
                                 {login ? 'Dont Have Account' : 'Go to'}
                                 <button onClick={handleSign} className=" btn-regis">{login ? 'Sign-Up' : 'Sign-in'}</button>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 gambar d-flex align-items-center">
+                    <div className="col-md-6 gambar  align-items-center">
                         <div className="col-10 mx-auto d-flex flex-column text-center text-white">
                             <div className="col-10 mx-auto  mb-3">
                                 <img src={img} alt="job" className="img-fluid rounded" />
