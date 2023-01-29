@@ -38,7 +38,7 @@ export  const userLogin = (data) => {
                     payload: {
                         loading: false,
                         data: false,
-                        errorMassage: error.massage
+                        errorMassage: error
                     }
                 })
             })
@@ -80,7 +80,7 @@ export  const userRegis = (data) => {
                     payload: {
                         loading: false,
                         data: false,
-                        errorMassage: error.massage
+                        errorMassage: error
                     }
                 })
             })
