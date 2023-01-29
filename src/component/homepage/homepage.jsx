@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import Loading from '../loading';
+import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { searchJobList } from '../../redux/action/jobAction';
 import hero from '../../asset/hero.jpg'
 import { motion } from "framer-motion"
@@ -9,7 +8,6 @@ import { motion } from "framer-motion"
 const Homepage = () => {
     const dispatch = useDispatch()
     const [description, setDescription] = useState('');
-    const { searchListJob, searchListJobLoading, searchListJobError } = useSelector((state) => state.JobReducer)
 
     const handleSubmit = () => {
         dispatch(searchJobList({ description: description, location: '', type: '' }))
@@ -17,11 +15,7 @@ const Homepage = () => {
 
     return (
         <div className="col-md-10 mx-auto konten-hero animate__lightSpeedInLeft">
-            {
-                searchListJob ? <Navigate to='/list' /> : searchListJobLoading ? <Loading /> : <Navigate to='/list' /> 
-            }
             <div className="row ">
-
                 <div className=' p-4 col-md-6  d-flex  flex-column justify-content-center '>
                     <motion.div
                         initial={{x: -1000}}
@@ -37,7 +31,7 @@ const Homepage = () => {
                                 })}
                                 value={description}
                                 className="form-control" type="text" aria-label="readonly input example" placeholder='Lowongan apa yang anda cari ?' />
-                            <a onClick={handleSubmit} className="btn btn-yellow ms-2">Seacrh</a>
+                            <NavLink onClick={handleSubmit} to='/list' className="btn btn-yellow ms-2">Seacrh</NavLink>
                         </div>
                     </motion.div>
 
