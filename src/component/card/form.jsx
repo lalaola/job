@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userLogin } from '../../redux/action/loginAction';
 
 const Form = () => {
@@ -7,10 +7,8 @@ const Form = () => {
     const [password, setPass] = useState('');
    
     const dispatch = useDispatch()
-    const {getLogin} = useSelector((state) => state.JobReducer)
+    // const {getLogin} = useSelector((state) => state.JobReducer)
    
-  
-
     const handleSubmit = (e) =>{
         e.preventDefault()
         console.log('email',email,password)

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { jobList } from '../../redux/action/jobAction';
+import Loading from '../loading';
 import Index from '../pagin';
 
 
@@ -26,7 +27,7 @@ const ListJob = () => {
             
             {searchListJob ? <Index items={searchListJob}/>: getListJob ? (
                 <Index items={getListJob}/>
-            ) : 'loading'}
+            ) : getListJobLoading ? <Loading/> : 'Data Tidak Tersedia'}
         </div>
     );
 }
