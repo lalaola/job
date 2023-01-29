@@ -24,8 +24,8 @@ const Login = () => {
         >
             <div className='d-flex justify-content-center wrap-login' >
                 {getLogin ? <Navigate to='/list' /> : getLoginLoading ? <Loading /> : ''}
-                <div className="login  col-8 d-flex ">
-                    <div className="col-md-6 d-flex align-items-center">
+                <div className="login  col-md-8 d-flex ">
+                    <div className="col-md-6 col-sm-10 d-flex align-items-center">
                         <div className="col-10 mx-auto d-flex flex-column">
                             {login ? <LoginKontent /> : <Regis />}
                             <div className="d-flex align-items-center mx-auto mt-3">

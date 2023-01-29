@@ -187,6 +187,9 @@ code {
     z-index: 1;
     transition:right 660ms ease-in-out;
   }
+  .login{
+    width: 80%;
+  }
 }
 
 .job,.detail{
