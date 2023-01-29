@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 const Job = () => {
     return (
-        <div>
+        <div className='job'>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

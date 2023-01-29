@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 const Detail = () => {
     return (
-        <div>
+        <div className='detail'>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
