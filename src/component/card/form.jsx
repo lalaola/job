@@ -1,21 +1,29 @@
 import React,{useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogin } from '../../redux/action/loginAction';
+import { Navigate } from 'react-router-dom';
+import { googleUserLogin, userLogin } from '../../redux/action/loginAction';
 
 const Form = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
    
     const dispatch = useDispatch()
-    const {getLoginError} = useSelector((state) => state.JobReducer)
-    
+    const {getLoginError , getLoginGoole} = useSelector((state) => state.JobReducer)
     const handleSubmit = (e) =>{
         e.preventDefault()
         dispatch(userLogin({email:email,password:password}))
     }
+    const handleSubmitGoogle = (e) =>{
+        e.preventDefault()
+        dispatch(googleUserLogin())
+        console.log('sekarang',getLoginGoole)
+    }
+    console.log('awal',getLoginGoole)
+
 
     return (
         <div>
+            {getLoginGoole ? <Navigate to='/list'/> : ''}
             <form>
                 <div className="mb-3">
                     <input onChange={((e)=>{
@@ -40,7 +48,7 @@ const Form = () => {
                 <button onClick={handleSubmit}className="btn btn-yellow me-3">Login</button>
                     or
 
-                    <a  className="btn">Login With Google</a>
+                    <a  onClick={handleSubmitGoogle} className="btn">Login With Google</a>
                 </div>
             </form>
         </div>

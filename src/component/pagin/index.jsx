@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useSelector } from 'react-redux';
 import Card from '../card/card';
-import { motion } from 'framer-motion';
 
 const Index = (props) => {
     const { getListJob, getListJobLoading, getListJobError, searchListJob, searchListJobLoading, searchListJobError } = useSelector((state) => state.JobReducer)

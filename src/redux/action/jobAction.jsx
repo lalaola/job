@@ -20,7 +20,7 @@ export  const jobList = () => {
         // get Api 
         axios({
             method: 'GET',
-            url: "http://dev3.dansmultipro.co.id/api/recruitment/positions.json",
+            url: "https://firebasestorage.googleapis.com/v0/b/login-2b80a.appspot.com/o/job.json?alt=media&token=0c2e1530-b8aa-4c1a-887d-c914f8e7e7e4",
             timeout: 120000
         })
             .then((Response) => {

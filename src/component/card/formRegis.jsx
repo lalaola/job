@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { userRegis } from '../../redux/action/loginAction';
+import { googleUserRegis, userRegis } from '../../redux/action/loginAction';
 import Loading from '../loading';
 
 const FormRegis = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
+    const [displayName, setdisplayName] = useState('');
 
     const dispatch = useDispatch()
-    const { getRegis, getRegisLoading, getRegisError } = useSelector((state) => state.JobReducer)
+    const { getRegis, getRegisLoading, getRegisError ,getRegisGoogle} = useSelector((state) => state.JobReducer)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(userRegis({ email: email, password: password }))
+        dispatch(userRegis({ email: email, password: password ,displayName:displayName}))
     }
-    console.log(getRegis)
+    const handleSubmitGoogle = (e) => {
+        e.preventDefault()
+        dispatch(googleUserRegis())
+    }
     useEffect(() => {
         // paggil
         if (getRegis) {
@@ -27,9 +31,13 @@ const FormRegis = () => {
     return (
         <div>
             <form>
-                {/* <div class="mb-3">
-                    <input type="text" class="form-control" id="username" placeholder='username'/>
-                </div> */}
+                <div class="mb-3">
+                    <input type="text" 
+                    onChange={((e) => {
+                        setdisplayName(e.target.value)
+                    })}
+                    class="form-control" id="username" placeholder='username'/>
+                </div>
                 <div className="mb-3">
                     <input type="email" onChange={((e) => {
                         setEmail(e.target.value)
@@ -49,7 +57,7 @@ const FormRegis = () => {
                     <a onClick={handleSubmit} className="btn btn-yellow me-3">Regis</a>
                     or
 
-                    <button className="btn">Login With Google</button>
+                    <a className="btn" onClick={handleSubmitGoogle}>Login With Google j</a>
                 </div>
             </form>
         </div>

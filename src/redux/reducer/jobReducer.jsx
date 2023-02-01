@@ -1,6 +1,6 @@
 import { DETAIL_JOB_LIST, GET_LIST_JOB, SEARCH_LIST_JOB } from "../action/jobAction";
-import { GET_REGIS } from "../action/loginAction";
-import { GET_LOGIN } from "../action/loginAction";
+import { GET_REGIS ,GET_REGIS_GOOGLE} from "../action/loginAction";
+import { GET_LOGIN,GET_LOGIN_GOOGLE } from "../action/loginAction";
 
 const innitialState ={
     getListJob : false,
@@ -21,7 +21,15 @@ const innitialState ={
    
     getLogin: false,
     getLoginLoading : false,
-    getLoginError : false
+    getLoginError : false,
+
+    getLoginGoole: false,
+    getLoginLoadingGoogle : false,
+    getLoginErrorGoogle : false,
+
+    getRegisnGoole: false,
+    getRegisLoadingGoogle : false,
+    getRegisErrorGoogle : false,
 }
 
 const job = (state = innitialState, action) =>{
@@ -35,11 +43,29 @@ const job = (state = innitialState, action) =>{
 
             }
         case GET_LOGIN :
+            console.log(state.getLoginLoadingGoogle)
             return {
                 ...state,
                 getLogin : action.payload.data,
                 getLoginLoading : action.payload.loading,
                 getLoginError : action.payload.errorMassage
+
+            }
+        case GET_LOGIN_GOOGLE :
+            console.log('after', state.getLoginGoogle)
+            return {
+                ...state,
+                getLoginGoogle : action.payload.data,
+                getLoginLoadingGoogle : action.payload.loading,
+                getLoginErrorGoogle : action.payload.errorMassage
+
+            }
+        case GET_REGIS_GOOGLE :
+            return {
+                ...state,
+                getRegisGoogle : action.payload.data,
+                getRegisLoadingGoogle : action.payload.loading,
+                getRegisErrorGoogle : action.payload.errorMassage
 
             }
         case GET_LIST_JOB :
