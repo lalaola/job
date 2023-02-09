@@ -5,6 +5,7 @@ export const SEARCH_LIST_JOB = 'SEARCH_LIST_JOB'
 export const FIND_JOB_LIST = 'FIND_JOB_LIST'
 export const DETAIL_JOB_LIST = 'DETAIL_JOB_LIST'
 
+
 export  const jobList = () => {
     return (dispatch) => {
         // loading 
@@ -25,7 +26,6 @@ export  const jobList = () => {
         })
             .then((Response) => {
                 // berhasil
-                console.log("3. data berhasil masuk",Response.data)
                 dispatch({
                     type: GET_LIST_JOB,
                     payload: {
@@ -60,7 +60,6 @@ export  const searchJobList = (data) => {
             }
         })
         // get Api 
-        console.log(data)
         axios({
             method: 'GET',
             url: `http://dev3.dansmultipro.co.id/api/recruitment/positions.json?description=${data.description}&location=${data.location}&type=${data.type}`,
@@ -68,7 +67,6 @@ export  const searchJobList = (data) => {
         })
             .then((Response) => {
                 // berhasil
-                console.log("3. data berhasil masuk",Response.data)
                 dispatch({
                     type: SEARCH_LIST_JOB,
                     payload: {
@@ -110,7 +108,6 @@ export  const findJobList = (data) => {
         })
             .then((Response) => {
                 // berhasil
-                console.log("3. data berhasil masuk")
                 dispatch({
                     type: FIND_JOB_LIST,
                     payload: {

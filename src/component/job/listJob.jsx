@@ -24,10 +24,10 @@ const ListJob = () => {
     return (
         <div className='container mt-4'>
             <h3 className='pb-3'>{searchListJob ? `Lowongan Pekerjaan yang tersedia ${total}/18 pekerjaan` : ''}</h3>
-            
-            {searchListJob ? <Index items={searchListJob}/>: getListJob ? (
-                <Index items={getListJob}/>
-            ) : getListJobLoading ? <Loading/> : 'Data Tidak Tersedia'}
+
+            {searchListJob ? <Index items={searchListJob} /> : getListJob ? (
+                <Index items={getListJob} />
+            ) : getListJobLoading ? <Loading /> : 'Data Tidak Tersedia'}
         </div>
     );
 }

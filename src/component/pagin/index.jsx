@@ -13,7 +13,6 @@ const Index = (props) => {
                 {currentItems &&
                     currentItems.map((getListJob) => (
                         <div key={getListJob.id}>
-                            {console.log(getListJob)}
                             <Card id={getListJob.id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
                         </div>
                     ))}

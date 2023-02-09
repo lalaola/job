@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { googleUserRegis, userRegis } from '../../redux/action/loginAction';
 import Loading from '../loading';
 
@@ -30,13 +31,14 @@ const FormRegis = () => {
 
     return (
         <div>
+            {getRegisGoogle ? <Navigate to='/list'/> : ''} 
             <form>
-                <div class="mb-3">
+                <div className="mb-3">
                     <input type="text" 
                     onChange={((e) => {
                         setdisplayName(e.target.value)
-                    })}
-                    class="form-control" id="username" placeholder='username'/>
+                    })} value={displayName}
+                    className="form-control" id="username" placeholder='username'/>
                 </div>
                 <div className="mb-3">
                     <input type="email" onChange={((e) => {

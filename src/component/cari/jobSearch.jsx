@@ -10,7 +10,6 @@ const JobSearch = () => {
 
     const handleSubmit = ()=>{
         dispatch(searchJobList({description:description,location:location,type:type}))
-        console.log(location,description,type)
     }
 
     return (

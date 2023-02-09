@@ -23,11 +23,11 @@ const innitialState ={
     getLoginLoading : false,
     getLoginError : false,
 
-    getLoginGoole: false,
+    getLoginGoogle: false,
     getLoginLoadingGoogle : false,
     getLoginErrorGoogle : false,
 
-    getRegisnGoole: false,
+    getRegisGoogle: false,
     getRegisLoadingGoogle : false,
     getRegisErrorGoogle : false,
 }
@@ -43,7 +43,6 @@ const job = (state = innitialState, action) =>{
 
             }
         case GET_LOGIN :
-            console.log(state.getLoginLoadingGoogle)
             return {
                 ...state,
                 getLogin : action.payload.data,
@@ -52,7 +51,6 @@ const job = (state = innitialState, action) =>{
 
             }
         case GET_LOGIN_GOOGLE :
-            console.log('after', state.getLoginGoogle)
             return {
                 ...state,
                 getLoginGoogle : action.payload.data,

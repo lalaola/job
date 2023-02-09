@@ -8,7 +8,7 @@ const Form = () => {
     const [password, setPass] = useState('');
    
     const dispatch = useDispatch()
-    const {getLoginError , getLoginGoole} = useSelector((state) => state.JobReducer)
+    const {getLoginError , getLoginGoogle} = useSelector((state) => state.JobReducer)
     const handleSubmit = (e) =>{
         e.preventDefault()
         dispatch(userLogin({email:email,password:password}))
@@ -16,14 +16,12 @@ const Form = () => {
     const handleSubmitGoogle = (e) =>{
         e.preventDefault()
         dispatch(googleUserLogin())
-        console.log('sekarang',getLoginGoole)
     }
-    console.log('awal',getLoginGoole)
 
 
     return (
         <div>
-            {getLoginGoole ? <Navigate to='/list'/> : ''}
+            {getLoginGoogle ? <Navigate to='/list'/> : ''}
             <form>
                 <div className="mb-3">
                     <input onChange={((e)=>{

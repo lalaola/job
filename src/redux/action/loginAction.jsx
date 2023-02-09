@@ -22,7 +22,7 @@ export  const userLogin = (data) => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log("3.data masuk",user)
+          localStorage.setItem('user', JSON.stringify(user))
           dispatch({
             type: GET_LOGIN,
             payload: {
@@ -66,6 +66,8 @@ export  const googleUserRegis = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
+            localStorage.setItem('user', JSON.stringify(user))
+
             dispatch({
                 type: GET_REGIS_GOOGLE,
                 payload: {
@@ -74,12 +76,6 @@ export  const googleUserRegis = () => {
                     errorMassage: false
                 }
             })
-          }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            const email = error.customData.email;
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
           })
             .catch((error) => {
                 console.log("3.gagal")
@@ -115,24 +111,16 @@ export  const googleUserLogin = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
-            console.log('3. loading masuk action',user)
+            localStorage.setItem('user', JSON.stringify(user))
+
             dispatch({
                 type: GET_LOGIN_GOOGLE,
                 payload: {
                     loading: false,
-                    data: true,
+                    data: user,
                     errorMassage: false
                 }
             })
-          }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
           })
             .catch((error) => {
                 console.log("3.gagal")
@@ -147,6 +135,7 @@ export  const googleUserLogin = () => {
             })
     }
 }
+
 export  const userRegis = (data) => {
     const auth = getAuth();
     console.log('2. loading masuk action')
@@ -165,7 +154,8 @@ export  const userRegis = (data) => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log("3.data masuk")
+          localStorage.setItem('user', JSON.stringify(user))
+
           dispatch({
             type: GET_REGIS,
             payload: {
@@ -189,5 +179,7 @@ export  const userRegis = (data) => {
             })
     }
 }
+
+
 
 
