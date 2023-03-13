@@ -95,8 +95,7 @@ code {
 .navbar {
   background-color: #FFFFFF;
   box-shadow: 0px -20px 42px 5px rgba(255, 183, 1, 0.27);
-  position: fixed;
-
+ 
 }
 
 .toggle {
