@@ -21,7 +21,7 @@ export  const jobList = () => {
         // get Api 
         axios({
             method: 'GET',
-            url: "http://dev3.dansmultipro.co.id/api/recruitment/positions.json",
+            url: "https://comfortable-hare-boot.cyclic.app/products",
             timeout: 120000
         })
             .then((Response) => {
@@ -144,7 +144,7 @@ export  const detailJobList = (data) => {
         // get Api 
         axios({
             method: 'GET',
-            url: `http://dev3.dansmultipro.co.id/api/recruitment/positions/${data}`,
+            url: `https://comfortable-hare-boot.cyclic.app/products/${data}`,
             timeout: 120000
         })
             .then((Response) => {

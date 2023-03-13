@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import Index from './routes';
 import { compose,applyMiddleware,createStore } from 'redux';
 import { Provider } from 'react-redux';
