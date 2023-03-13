@@ -4,9 +4,10 @@ export const GET_LIST_JOB = 'GET_LIST_JOB'
 export const SEARCH_LIST_JOB = 'SEARCH_LIST_JOB'
 export const FIND_JOB_LIST = 'FIND_JOB_LIST'
 export const DETAIL_JOB_LIST = 'DETAIL_JOB_LIST'
+export const GET_CARI = 'GET_CARI'
 
 
-export  const jobList = () => {
+export const jobList = () => {
     return (dispatch) => {
         // loading 
         console.log('2. loading masuk action')
@@ -48,7 +49,30 @@ export  const jobList = () => {
             })
     }
 }
-export  const searchJobList = (data) => {
+export const cariJob = (desc) => {
+    return (dispatch) => {
+        // loading 
+        console.log("loading")
+        dispatch({
+            type: GET_CARI,
+            payload: {
+                loading: true,
+                data: false,
+                errorMassage: false
+            }
+        })
+        console.log(desc)
+        dispatch({
+            type: GET_CARI,
+            payload: {
+                loading: false,
+                data: desc,
+                errorMassage: false
+            }
+        })   
+    }
+}
+export const searchJobList = (data) => {
     return (dispatch) => {
         // loading 
         dispatch({
@@ -89,7 +113,7 @@ export  const searchJobList = (data) => {
             })
     }
 }
-export  const findJobList = (data) => {
+export const findJobList = (data) => {
     return (dispatch) => {
         // loading 
         dispatch({
@@ -130,7 +154,7 @@ export  const findJobList = (data) => {
             })
     }
 }
-export  const detailJobList = (data) => {
+export const detailJobList = (data) => {
     return (dispatch) => {
         // loading 
         dispatch({

@@ -1,15 +1,15 @@
 import React,{useState}from 'react';
-import { searchJobList } from '../../redux/action/jobAction';
+import { cariJob, searchJobList } from '../../redux/action/jobAction';
 import { useDispatch } from 'react-redux';
 
 const JobSearch = () => {
     const dispatch = useDispatch()
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
-    const [type, setType] = useState('FULL TIME');
+    const [type, setType] = useState('');
 
     const handleSubmit = ()=>{
-        dispatch(searchJobList({description:description,location:location,type:type}))
+        dispatch(cariJob({desc:description,location:location,type:type}))
     }
 
     return (
@@ -33,8 +33,8 @@ const JobSearch = () => {
                         <select value={type}  onChange={((e)=>{
                             setType(e.target.value) 
                         })} className="form-select" aria-label="Default select example">
-                            <option value="FULL TIME">Full Time</option>
-                            <option value="PART TIME">Part Time</option>
+                            <option value="Full">Full Time</option>
+                            <option value="Part">Part Time</option>
                         </select>
                     </div>
                     <div className="col-md-2 col-sm-6 btn-cari">

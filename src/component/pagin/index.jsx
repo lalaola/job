@@ -4,18 +4,29 @@ import { useSelector } from 'react-redux';
 import Card from '../card/card';
 
 const Index = (props) => {
-    const { getListJob, getListJobLoading, getListJobError, searchListJob, searchListJobLoading, searchListJobError } = useSelector((state) => state.JobReducer)
+    const { cari, getListJobLoading, getListJobError, searchListJob, searchListJobLoading, searchListJobError } = useSelector((state) => state.JobReducer)
     const items = props.items
+    console.log("casti", cari)
 
     function Items({ currentItems }) {
         return (
             <>
-                {currentItems &&
-                    currentItems.map((getListJob) => (
+            
+                {cari ? 
+                currentItems &&
+                    currentItems.filter(product => product.description.toLowerCase().includes(cari.desc)&&product.location.toLowerCase().includes(cari.location)&&product.type.includes(cari.type)).map((getListJob)  => (
                         <div key={getListJob.id}>
                             <Card id={getListJob.id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
                         </div>
-                    ))}
+                    ))
+                :
+                currentItems &&
+                currentItems.map((getListJob)  => (
+                    <div key={getListJob.id}>
+                        <Card id={getListJob.id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
+                    </div>
+                ))
+                }
             </>
         );
     }

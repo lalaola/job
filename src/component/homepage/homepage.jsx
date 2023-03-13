@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { searchJobList } from '../../redux/action/jobAction';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { cariJob, searchJobList } from '../../redux/action/jobAction';
 import hero from '../../asset/hero.jpg'
 import { motion } from "framer-motion"
 
@@ -10,7 +10,7 @@ const Homepage = () => {
     const [description, setDescription] = useState('');
 
     const handleSubmit = () => {
-        dispatch(searchJobList({ description: description, location: '', type: '' }))
+        dispatch(cariJob({desc:description,location:"",type:""}))
     }
 
     return (
@@ -31,7 +31,7 @@ const Homepage = () => {
                                 })}
                                 value={description}
                                 className="form-control" type="text" aria-label="readonly input example" placeholder='Lowongan apa yang anda cari ?' />
-                            <NavLink onClick={handleSubmit} to='/list' className="btn btn-yellow ms-2">Seacrh</NavLink>
+                            <NavLink to="/list" onClick={handleSubmit}  className="btn btn-yellow ms-2">Seacrh</NavLink>
                         </div>
                     </motion.div>
 
