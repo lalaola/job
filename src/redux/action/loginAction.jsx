@@ -34,7 +34,7 @@ export  const userLogin = (data) => {
           // ...
         })
             .catch((error) => {
-                console.log("3.gagal")
+                console.log("3.gagal",error)
                 dispatch({
                     type: GET_LOGIN,
                     payload: {
@@ -78,7 +78,7 @@ export  const googleUserRegis = () => {
             })
           })
             .catch((error) => {
-                console.log("3.gagal")
+                console.log("3.gagal",error)
                 dispatch({
                     type: GET_LOGIN_GOOGLE,
                     payload: {
@@ -167,7 +167,7 @@ export  const userRegis = (data) => {
           // ...
         })
             .catch((error) => {
-                console.log("3.gagal")
+                console.log("3.gagal",error)
                 dispatch({
                     type: GET_REGIS,
                     payload: {
