@@ -22,7 +22,7 @@ export const jobList = () => {
         // get Api 
         axios({
             method: 'GET',
-            url: "https://comfortable-hare-boot.cyclic.app/products",
+            url: "http://dev3.dansmultipro.co.id/api/recruitment/positions.json",
             timeout: 120000
         })
             .then((Response) => {

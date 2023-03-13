@@ -27,7 +27,7 @@ const JobSearch = () => {
                         onChange={((e)=>{
                             setLocation(e.target.value)
                         })}
-                         className="form-control" type="text" value={location} aria-label="readonly input example" placeholder='Cari Lowongan' />
+                         className="form-control" type="text" value={location} aria-label="readonly input example" placeholder='Lokasi pekerjaan' />
                     </div>
                     <div className="col-md-2 col-sm-6 menu-type">
                         <select value={type}  onChange={((e)=>{
