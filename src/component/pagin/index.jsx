@@ -19,7 +19,7 @@ const Index = (props) => {
                 {cari ?
                     getListJob.filter(product => product.description.toLowerCase().includes(cari.desc) && product.location.toLowerCase().includes(cari.location) && product.type.includes(cari.type)).map((getListJob, index) => (
                         <div key={getListJob.id}>
-                            {total=index+1}
+                            {/* {total=index+1} */}
                             <Card id={getListJob.id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
                         </div>
                     ))
