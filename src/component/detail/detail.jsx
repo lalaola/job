@@ -8,7 +8,7 @@ const DetailComponent = (props) => {
     // const [id, setId] = useState('');
     const dispatch = useDispatch()
     const {id} = useParams();
-    const { detailListJob, detailListJobLoading, detailListJobError  } = useSelector((state) => state.JobReducer)
+    const { detailListJob, detailListJobLoading  } = useSelector((state) => state.JobReducer)
  
     useEffect(() => {
         // paggil

@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
-import { useDispatch, useSelector } from 'react-redux';
-import { jumlahCari } from '../../redux/action/jobAction';
+import { useSelector } from 'react-redux';
 import Card from '../card/card';
 
 const Index = (props) => {
-    const { cari, getListJob, jumlah, getListJobError, searchListJob, searchListJobLoading, searchListJobError } = useSelector((state) => state.JobReducer)
+    const { cari, getListJob } = useSelector((state) => state.JobReducer)
     const items = props.items
     console.log("casti", cari)
-    let [total, setYesy] = useState();
-    const dispatch = useDispatch()
     
     
     function Items({ currentItems }) {
@@ -18,16 +14,16 @@ const Index = (props) => {
             <>
                 {cari ?
                     getListJob.filter(product => product.description.toLowerCase().includes(cari.desc) && product.location.toLowerCase().includes(cari.location) && product.type.includes(cari.type)).map((getListJob, index) => (
-                        <div key={getListJob.id}>
+                        <div key={getListJob._id}>
                             {/* {total=index+1} */}
-                            <Card id={getListJob.id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
+                            <Card id={getListJob._id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
                         </div>
                     ))
                     :
                     currentItems &&
                     currentItems.map((getListJob) => (
-                        <div key={getListJob.id}>
-                            <Card id={getListJob.id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
+                        <div key={getListJob._id}>
+                            <Card id={getListJob._id} title={getListJob.title} type={getListJob.type} company={getListJob.company} location={getListJob.location} />
                         </div>
                     ))
                 }

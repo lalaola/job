@@ -23,7 +23,7 @@ export const jobList = () => {
         // get Api 
         axios({
             method: 'GET',
-            url: "https://mongo-alien.vercel.app/aliens",
+            url: "https://mongo-alien.vercel.app/aliens/",
             timeout: 120000
         })
             .then((Response) => {
@@ -193,7 +193,7 @@ export const detailJobList = (data) => {
         // get Api 
         axios({
             method: 'GET',
-            url: `https://comfortable-hare-boot.cyclic.app/products/${data}`,
+            url: `https://mongo-alien.vercel.app/aliens/${data}`,
             timeout: 120000
         })
             .then((Response) => {
