@@ -23,7 +23,7 @@ export const jobList = () => {
         // get Api 
         axios({
             method: 'GET',
-            url: "http://localhost:1000/products",
+            url: "https://mongo-alien.vercel.app/aliens",
             timeout: 120000
         })
             .then((Response) => {
