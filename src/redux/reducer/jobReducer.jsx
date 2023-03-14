@@ -1,4 +1,4 @@
-import { DETAIL_JOB_LIST, GET_CARI, GET_LIST_JOB, SEARCH_LIST_JOB } from "../action/jobAction";
+import { DETAIL_JOB_LIST, GET_CARI, GET_JUMLAH, GET_LIST_JOB, SEARCH_LIST_JOB } from "../action/jobAction";
 import { GET_REGIS ,GET_REGIS_GOOGLE} from "../action/loginAction";
 import { GET_LOGIN,GET_LOGIN_GOOGLE } from "../action/loginAction";
 
@@ -7,6 +7,7 @@ const innitialState ={
     getListJobLoading : false,
     getListJobError : false,
 
+    jumlah: 'ola',
     cari : false,
     cariLoading : false,
    
@@ -37,6 +38,11 @@ const innitialState ={
 
 const job = (state = innitialState, action) =>{
     switch (action.type) {
+        case GET_JUMLAH :
+            return {
+                ...state,
+                jumlah : action.payload.data,
+            }
         case GET_CARI :
             return {
                 ...state,

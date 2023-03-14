@@ -5,6 +5,8 @@ export const SEARCH_LIST_JOB = 'SEARCH_LIST_JOB'
 export const FIND_JOB_LIST = 'FIND_JOB_LIST'
 export const DETAIL_JOB_LIST = 'DETAIL_JOB_LIST'
 export const GET_CARI = 'GET_CARI'
+export const GET_JUMLAH = 'GET_JUMLAH'
+
 
 export const jobList = () => {
     return (dispatch) => {
@@ -151,6 +153,30 @@ export const findJobList = (data) => {
                     }
                 })
             })
+    }
+}
+export const jumlahCari = (data) => {
+    return (dispatch) => {
+      try {
+        dispatch({
+            type: GET_JUMLAH,
+            payload: {
+                loading: false,
+                data: data,
+                errorMassage: false
+            }
+        })
+      } catch (error) {
+        console.log("gagal")
+        dispatch({
+            type: DETAIL_JOB_LIST,
+            payload: {
+                loading: false,
+                data: false,
+                errorMassage: error.massage
+            }
+        })
+      }
     }
 }
 export const detailJobList = (data) => {

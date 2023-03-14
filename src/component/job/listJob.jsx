@@ -15,15 +15,10 @@ const ListJob = () => {
     }, [dispatch])
 
 
-    var total = 0
-    for (const property in cari) {
-        total = total + 1
-        console.log(total)
-    }
-
+  
     return (
         <div className='container mt-4'>
-            <h3 className='pb-3'>{cari ? `Lowongan Pekerjaan yang tersedia ${total}/18 pekerjaan` : ''}</h3>
+            {/* <h3 className='pb-3'>{cari ? `Lowongan Pekerjaan yang tersedia 9/18 pekerjaan` : ''}</h3> */}
             {getListJob ? <Index items={getListJob} /> : getListJobLoading ? 'loaading' : 'Data Tidak Tersedia'}
         </div>
     );
