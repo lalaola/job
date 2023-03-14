@@ -6,7 +6,6 @@ export const FIND_JOB_LIST = 'FIND_JOB_LIST'
 export const DETAIL_JOB_LIST = 'DETAIL_JOB_LIST'
 export const GET_CARI = 'GET_CARI'
 
-
 export const jobList = () => {
     return (dispatch) => {
         // loading 
@@ -22,7 +21,7 @@ export const jobList = () => {
         // get Api 
         axios({
             method: 'GET',
-            url: "http://dev3.dansmultipro.co.id/api/recruitment/positions.json",
+            url: "http://localhost:1000/products",
             timeout: 120000
         })
             .then((Response) => {
